@@ -71,17 +71,6 @@ public class GenerateJWTSecret {
 3. Run `npm run serve`
 4. The frontend will run on port 8081
 
-
-In order to test different roles and see the permitted views of each user role you can test with the following users (log in with the following credentials):
-1. alice.johnson@example.com
-2. jane.doe@example.com
-3. john.smith@example.com
-4. test@test.com
-
-NB! Password for all is "password123"
-
-You are able to see their role in the profile page. Use this set of credentials to test the different roles and their permissions.
-
 Running on **Docker** is also available. There are Dockerfiles and docker-compose file made specially for that.
 To run the application on Docker, you need to have Docker installed on your machine and running.
 The docker-compose file will create the following containers:

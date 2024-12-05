@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "tarkvaraprojekti-pildid",
+  "private_key_id": "60610875848275b051017acab2995204bf4be40c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC3nUwYHyBeJsvR\nZSlQxkC0Qf2gNfFXjgNvUcIxpBkzcnPJZsGkhmBSvywdXOB86IWIWOkVB0wlZml0\nlDYO2+P1sSLX5Z7ujBtgQ6sgCNb3kKnRfdYhE2GmWgMVV7L9sF88TLBDI3rckY2I\nRiOfc+4xY/6uyKByzXASqcngnYPqGXpOkfX7kG0GWbImed9k3lp+0bfkJVYZlOZe\nKq5r9yUL42anqU6jhOA+oEnSsxJ0W16uRC2TkKeVS2RyblDniM5/VquNRoaN5yp8\nry5Stjc3TbZi7RlBfSpK9I5ZTwh9nCtrdEsviPP0t+ikX++f4QKU9Kz4L6tclMgS\n4IDG/U4hAgMBAAECggEAAps6d3KQaca5pJ5fxitIw4hG5ahzXXiVD9ZOfCh38TwL\nBMczKSr9RLptCZoKD5rYO6alsRpBUmv2I/EHRQnp9hC0ibGTMmAZssG2JPxcIw+u\nGey0IpQ/IfKn1dyQvFc1vF4bL8pJ/AXaxz4V4w1k8oV4od30IVoNQN4RMRGSU/Mw\nR0yKVlAJoy3IkcFGiHj9LmiRZ21jYqVMXPpNkIMvk0bR/4b+KUpKJ9xziUd/1X70\nVSwTFLppDhTrJQFyCxv/piE23cQwChOlT3Og5Ir1MNpt3vtdPKVTnNegg7qoNeJ+\neQh2a5ctmSbKkRhkfnAB48s5L2lM6Xnnn8oYj991gQKBgQDnQcfX3UCSA8H/BXMk\n2wWcwHJWyDjCdxwsFhejBGts5PC8eAZFc081odMFTBxeo5ClXYSHIdy7JJfvj0rZ\nxo6s8dqT02qIXS+7G3BNceGartzai3TSNDbEAsBhd4vVFxIFNFRJC4usNCAbHMDG\niv1GO1ORTt7qMcMQUkMHc4XjgQKBgQDLQpHAzVjj4q8o6A3QFLKPUSz6NUouyXi7\n21AqyI6lFH8HRm/O3Z2ok27qdZp2sPi6H5N9mVctSqfAIxGQlekpcAI6xBHCWcV9\n9IECP7u4YyeSZnM0LE98p5NeZQn7rCyS45S7+rxuQ9XXEnSYDc/S3ektlIaTfw8o\n5ROsMT46oQKBgF34rgN6xc1Pt5owlbyJP7uVvCClleL30bvcclhs6FZEpcqAH1RD\nahGKI5zIc9LFNnbsDHl4+iAV26OeH7Vk6P8//CkLxQOKkmW+3aCqwRlBKz+nYZ41\nV3fJAnHYyTqa+FijDgjspyIfwFgkE/XZ7teGLgwi95RFClXsh45UlDiBAoGAKulm\n9BlmRtY4vJ4hLGjyOaedo0VU4APQ5XgruJyW4Osu1k5clIPdIRXfOMiTT7OVD1ZT\nQRT6fqlgOQQuVSQREZqAHf/+79UcCLdx9ROXghoM5K+UatNgBKUsS6VxMhzrXCeH\n4xfQaEcSAlH3I5Lm6VHIRMMyljkg7jVOre/Hf4ECgYANwJznnWxwFoLaAuYAGcPK\nTSb7WbI1XCVAf5OC5NAyqdDy0FR/AtPTpleBbszKd81bf4pdSwRZ88P2YGgqBxGr\nsrobgjCT69aycomn9biahrP0Af6IgGMwnECr5ru9Y5eH/cxDahYVTYJznP9ZTcU1\n1XGZLGxAIRtCUgo4XgBzGQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "tvpprojekt@tarkvaraprojekti-pildid.iam.gserviceaccount.com",
+  "client_id": "112935848734521683450",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/tvpprojekt%40tarkvaraprojekti-pildid.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

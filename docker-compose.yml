@@ -1,0 +1,52 @@
+services:
+  backend:
+    build:
+      dockerfile: Dockerfile
+    container_name: eaa_backend
+    image: 'eaa_backend:latest'
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/EAA
+      SPRING_DATASOURCE_USERNAME: ${DB_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+      LOCATIONIQ_TOKEN: ${LOCATIONIQ_TOKEN}
+      FOLDERID: ${FOLDERID}
+      GOOGLE_APPLICATION_CREDENTIALS: ${GOOGLE_APPLICATION_CREDENTIALS}
+      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.PostgreSQLDialect
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    ports:
+      - "8080:8080"
+    networks:
+      - eaa_network
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./eaa_frontend
+      dockerfile: Dockerfile
+    container_name: eaa_frontend
+    image: 'eaa_frontend:latest'
+    ports:
+      - "8081:80"
+    networks:
+      - eaa_network
+
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile-db
+    container_name: eaa_db
+    image: 'eaa_db:latest'
+    environment:
+      - POSTGRES_DB=EAA
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    ports:
+      - "5432:5432"
+    networks:
+      - eaa_network
+
+networks:
+  eaa_network:
+    driver: bridge

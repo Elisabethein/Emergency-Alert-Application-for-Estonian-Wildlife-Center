@@ -1,0 +1,83 @@
+stages:
+  - build
+  - test
+  - frontend
+
+variables:
+  DB_USERNAME: $DB_USERNAME
+  DB_PASSWORD: $DB_PASSWORD
+  JWT_SECRET: $JWT_SECRET
+  LOCATIONIQ_TOKEN: $LOCATION_TOKEN
+  FOLDERID: ${FOLDERID}
+  SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/EAA
+  SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.PostgreSQLDialect
+  SPRING_JPA_HIBERNATE_DDL_AUTO: update
+
+services:
+  - name: postgres:latest
+    alias: db
+    variables:
+      POSTGRES_DB: EAA
+      POSTGRES_USER: $DB_USERNAME
+      POSTGRES_PASSWORD: $DB_PASSWORD
+
+cache:
+  paths:
+    - .gradle/wrapper
+    - .gradle/caches
+    - eaa_frontend/node_modules
+
+build:
+  stage: build
+  image: gradle:8-jdk17
+  script:
+    - gradle bootJar
+  artifacts:
+    paths:
+      - EmergencyAlertApplication.jar
+    expire_in: 1 week
+
+test:
+    stage: test
+    image: gradle:8-jdk17
+    services:
+      - selenium/standalone-chrome
+      - name: postgres:latest
+        alias: db
+        variables:
+          POSTGRES_DB: EAA
+          POSTGRES_USER: $DB_USERNAME
+          POSTGRES_PASSWORD: $DB_PASSWORD
+    script:
+      - export DB_USERNAME=$DB_USERNAME
+      - export DB_PASSWORD=$DB_PASSWORD
+      - export JWT_SECRET=$JWT_SECRET
+      - export LOCATIONIQ_TOKEN=$LOCATION_TOKEN
+      - export FOLDERID=$FOLDERID
+      - export SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/EAA
+      # Wait for PostgreSQL to be ready
+      - sleep 30
+      # Install Node.js
+      - curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+      - apt-get install -y nodejs
+      - sleep 30
+      - gradle test
+    artifacts:
+      paths:
+        - build/reports/tests/test/
+      when: always
+    dependencies:
+      - build
+
+
+frontend:
+    stage: frontend
+    image: node:18
+    script:
+      - cd eaa_frontend
+      - npm install
+      - npm run build
+    artifacts:
+      paths:
+        - eaa_frontend/dist
+      expire_in: 1 week

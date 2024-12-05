@@ -1,5 +1,7 @@
 # Emergency Alert Application
 
+A Java Spring Boot and Vue.js application for Estonian Wildlife Center. Please not that this is not the official repository for this project.
+
 ## Documentation
 
 ### Table of Contents
